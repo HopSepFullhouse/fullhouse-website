@@ -38,7 +38,6 @@ export async function POST(request: Request) {
             ? [
                 {
                   original_phone_number: phone,
-                  phone_number: phone,
                 },
               ]
             : [],
