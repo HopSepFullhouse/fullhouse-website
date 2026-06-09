@@ -32,6 +32,7 @@ export function ContactForm({ canOpen = true }: { canOpen?: boolean }) {
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   // Close the form again when no problem is selected anymore
   useEffect(() => {
@@ -76,16 +77,40 @@ export function ContactForm({ canOpen = true }: { canOpen?: boolean }) {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!validate()) return
     setIsSubmitting(true)
-    // Simulated submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+    setSubmitError(null)
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: form.vorname,
+          lastName: form.nachname,
+          email: form.email,
+          phone: form.telefon,
+          company: form.company,
+          roles: form.roles,
+          headcount: form.mitarbeiter,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error("Request failed")
+      }
+
       setIsSuccess(true)
       setForm(initialState)
-    }, 1200)
+    } catch {
+      setSubmitError(
+        "Beim Senden ist leider ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+      )
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const inputClasses = (field: string) =>
@@ -155,6 +180,7 @@ export function ContactForm({ canOpen = true }: { canOpen?: boolean }) {
                       </label>
                       <input
                         id="vorname"
+                        name="firstName"
                         type="text"
                         value={form.vorname}
                         onChange={(e) => updateField("vorname", e.target.value)}
@@ -171,6 +197,7 @@ export function ContactForm({ canOpen = true }: { canOpen?: boolean }) {
                       </label>
                       <input
                         id="nachname"
+                        name="lastName"
                         type="text"
                         value={form.nachname}
                         onChange={(e) => updateField("nachname", e.target.value)}
@@ -191,6 +218,7 @@ export function ContactForm({ canOpen = true }: { canOpen?: boolean }) {
                       </label>
                       <input
                         id="email"
+                        name="email"
                         type="email"
                         value={form.email}
                         onChange={(e) => updateField("email", e.target.value)}
@@ -207,6 +235,7 @@ export function ContactForm({ canOpen = true }: { canOpen?: boolean }) {
                       </label>
                       <input
                         id="telefon"
+                        name="phone"
                         type="tel"
                         value={form.telefon}
                         onChange={(e) => updateField("telefon", e.target.value)}
@@ -226,6 +255,7 @@ export function ContactForm({ canOpen = true }: { canOpen?: boolean }) {
                     </label>
                     <input
                       id="company"
+                      name="company"
                       type="text"
                       value={form.company}
                       onChange={(e) => updateField("company", e.target.value)}
@@ -277,6 +307,7 @@ export function ContactForm({ canOpen = true }: { canOpen?: boolean }) {
                     </label>
                     <input
                       id="mitarbeiter"
+                      name="headcount"
                       type="number"
                       min={1}
                       value={form.mitarbeiter}
@@ -290,6 +321,9 @@ export function ContactForm({ canOpen = true }: { canOpen?: boolean }) {
                   </div>
 
                   {/* Submit */}
+                  {submitError && (
+                    <p className="text-sm text-destructive mb-4 text-center">{submitError}</p>
+                  )}
                   <button
                     type="submit"
                     disabled={isSubmitting}
