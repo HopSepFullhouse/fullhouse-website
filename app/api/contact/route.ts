@@ -34,13 +34,7 @@ export async function POST(request: Request) {
               full_name: `${firstName ?? ""} ${lastName ?? ""}`.trim(),
             },
           ],
-          phone_numbers: phone
-            ? [
-                {
-                  original_phone_number: phone,
-                },
-              ]
-            : [],
+          phone_numbers: phone ? [phone] : [],
           description: `Website-Anfrage von ${company || "unbekannte Firma"}.
 Rollen: ${rolesText}
 Gesuchte Mitarbeiter: ${headcount ?? ""}`,
