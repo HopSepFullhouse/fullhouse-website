@@ -255,8 +255,49 @@ export default function DatenschutzPage() {
               </div>
             </Section>
 
-            {/* 10. Auftragsverarbeiter */}
-            <Section number="10" title="Auftragsverarbeiter & eingesetzte Dienste">
+            {/* 10. Talentpool */}
+            <Section number="10" title="Talentpool">
+              <p>
+                Im Rahmen unseres Talentpools speichern wir auf Wunsch von Bewerberinnen und Bewerbern deren Daten über das konkrete Stellenverfahren hinaus, um sie bei passenden zukünftigen Vakanzen erneut kontaktieren zu können.
+              </p>
+              <div className="mt-6 p-6 bg-card/50 rounded-lg border border-border/30 space-y-4">
+                <div>
+                  <h4 className="text-foreground font-medium mb-2">Zweck der Verarbeitung</h4>
+                  <p className="text-sm">Aufnahme in den Talentpool und Kontaktaufnahme bei passenden zukünftigen Vakanzen.</p>
+                </div>
+                <div>
+                  <h4 className="text-foreground font-medium mb-2">Rechtsgrundlage</h4>
+                  <p className="text-sm">Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO (bzw. § 26 Abs. 2 BDSG im Beschäftigungskontext).</p>
+                </div>
+                <div>
+                  <h4 className="text-foreground font-medium mb-2">Erhobene Datenkategorien</h4>
+                  <p className="text-sm">Kontaktdaten (Name, E-Mail, Telefonnummer), Lebenslauf, Zeugnisse, Qualifikationen, Berufserfahrung, ggf. Notizen aus Bewerbergesprächen.</p>
+                </div>
+                <div>
+                  <h4 className="text-foreground font-medium mb-2">Speicherdauer</h4>
+                  <p className="text-sm">Wir speichern Ihre Daten im Talentpool für 24 Monate ab Erteilung der Einwilligung. Nach Ablauf dieser Frist löschen wir Ihre Daten, sofern Sie nicht erneut einwilligen.</p>
+                </div>
+                <div>
+                  <h4 className="text-foreground font-medium mb-2">Empfänger / Kategorien von Empfängern</h4>
+                  <p className="text-sm">Zugriff haben nur berechtigte Mitarbeiter unseres Recruiting-Teams. Als technische Infrastruktur setzen wir ggf. externe Dienstleister ein (z. B. Monday.com als Bewerbermanagement-System), die als Auftragsverarbeiter gemäß Art. 28 DSGVO tätig werden.</p>
+                </div>
+                <div>
+                  <h4 className="text-foreground font-medium mb-2">Drittlandübermittlung</h4>
+                  <p className="text-sm">Soweit Daten in Drittländer außerhalb der EU/des EWR übermittelt werden (z. B. durch eingesetzte Dienstleister), stellen wir ein angemessenes Schutzniveau sicher, insbesondere durch Abschluss der EU-Standardvertragsklauseln. Auf Anfrage erhalten Sie gerne weitere Informationen bzw. eine Kopie der getroffenen Maßnahmen.</p>
+                </div>
+                <div>
+                  <h4 className="text-foreground font-medium mb-2">Widerruf der Einwilligung</h4>
+                  <p className="text-sm">Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Bitte senden Sie Ihren Widerruf an <a href="mailto:sebastian@full-house.io" className="text-accent hover:underline">sebastian@full-house.io</a>. Der Widerruf berührt die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung nicht.</p>
+                </div>
+                <div>
+                  <h4 className="text-foreground font-medium mb-2">Freiwilligkeit</h4>
+                  <p className="text-sm">Die Aufnahme in den Talentpool ist freiwillig. Ihnen entstehen keine Nachteile, wenn Sie keine Einwilligung erteilen.</p>
+                </div>
+              </div>
+            </Section>
+
+            {/* 11. Auftragsverarbeiter */}
+            <Section number="11" title="Auftragsverarbeiter & eingesetzte Dienste">
               <p>
                 Zur Bereitstellung unserer Website und Dienstleistungen setzen wir externe Dienstleister ein, 
                 die personenbezogene Daten in unserem Auftrag verarbeiten (Auftragsverarbeiter gemäß Art. 28 DSGVO).
@@ -292,8 +333,8 @@ export default function DatenschutzPage() {
               </p>
             </Section>
 
-            {/* 11. LinkedIn */}
-            <Section number="11" title="LinkedIn-Verlinkung">
+            {/* 12. LinkedIn */}
+            <Section number="12" title="LinkedIn-Verlinkung">
               <p>
                 Auf unserer Website sind Links zu unserem LinkedIn-Profil eingebunden. 
                 Beim Klick auf diese Links werden Sie auf die externe LinkedIn-Plattform weitergeleitet.
@@ -315,8 +356,8 @@ export default function DatenschutzPage() {
               </p>
             </Section>
 
-            {/* 12. Rechte */}
-            <Section number="12" title="Ihre Rechte">
+            {/* 13. Rechte */}
+            <Section number="13" title="Ihre Rechte">
               <p>
                 Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:
               </p>
@@ -334,8 +375,8 @@ export default function DatenschutzPage() {
               </p>
             </Section>
 
-            {/* 13. Aktualität */}
-            <Section number="13" title="Aktualität dieser Datenschutzerklärung">
+            {/* 14. Aktualität */}
+            <Section number="14" title="Aktualität dieser Datenschutzerklärung">
               <p>
                 Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Mai 2026.
               </p>
