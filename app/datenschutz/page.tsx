@@ -51,8 +51,8 @@ export default function DatenschutzPage() {
                 <p>10827 Berlin</p>
                 <p className="mt-4">
                   E-Mail:{" "}
-                  <a href="mailto:sebastian@full-house.io" className="text-accent hover:underline">
-                    sebastian@full-house.io
+                  <a href="mailto:bewerbung@full-house.io" className="text-accent hover:underline">
+                    bewerbung@full-house.io
                   </a>
                 </p>
                 <p className="mt-2">Vertreten durch: Jaro Müller & Sebastian Hoppen</p>
@@ -287,7 +287,7 @@ export default function DatenschutzPage() {
                 </div>
                 <div>
                   <h4 className="text-foreground font-medium mb-2">Widerruf der Einwilligung</h4>
-                  <p className="text-sm">Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Bitte senden Sie Ihren Widerruf an <a href="mailto:sebastian@full-house.io" className="text-accent hover:underline">sebastian@full-house.io</a>. Der Widerruf berührt die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung nicht.</p>
+                  <p className="text-sm">Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Bitte senden Sie Ihren Widerruf an <a href="mailto:bewerbung@full-house.io" className="text-accent hover:underline">bewerbung@full-house.io</a>. Der Widerruf berührt die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung nicht.</p>
                 </div>
                 <div>
                   <h4 className="text-foreground font-medium mb-2">Freiwilligkeit</h4>
