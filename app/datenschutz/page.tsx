@@ -35,6 +35,9 @@ export default function DatenschutzPage() {
             <p className="text-muted-foreground text-lg max-w-2xl">
               Informationen zur Verarbeitung personenbezogener Daten gemäß Art. 13 und 14 DSGVO.
             </p>
+            <a href="#talentpool" className="inline-block mt-6 text-accent hover:underline">
+              Direkt zu Punkt 10: Talentpool
+            </a>
           </div>
 
           {/* Sections */}
@@ -256,7 +259,7 @@ export default function DatenschutzPage() {
             </Section>
 
             {/* 10. Talentpool */}
-            <Section number="10" title="Talentpool">
+            <Section id="talentpool" number="10" title="Talentpool">
               <p>
                 Im Rahmen unseres Talentpools speichern wir auf Wunsch von Bewerberinnen und Bewerbern deren Daten über das konkrete Stellenverfahren hinaus, um sie bei passenden zukünftigen Vakanzen erneut kontaktieren zu können.
               </p>
@@ -406,9 +409,9 @@ export default function DatenschutzPage() {
   )
 }
 
-function Section({ number, title, children }: { number: string; title: string; children: React.ReactNode }) {
+function Section({ id, number, title, children }: { id?: string; number: string; title: string; children: React.ReactNode }) {
   return (
-    <section>
+  <section id={id}>
       <div className="flex items-baseline gap-4 mb-6">
         <span className="text-xs text-accent font-mono">{number}</span>
         <h2 className="text-2xl font-semibold text-foreground tracking-tight">{title}</h2>
